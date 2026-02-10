@@ -9,7 +9,7 @@ public class PraktikumPemilihanRevalinda {
         Scanner reva = new Scanner(System.in);
         
         System.out.println("Program Menghitung Nilai Akhir");
-        System.out.println("/n==============================");
+        System.out.println("\n==============================");
 
         System.out.print("Masukkan nilai tugas  : ");
         tugas = reva.nextDouble();
@@ -22,9 +22,9 @@ public class PraktikumPemilihanRevalinda {
 
         if (tugas<0 || tugas>100 || kuiz<0 || kuiz>100 || uts<0 || uts>100 || uas<0 || uas>100) {
             
-            System.out.println("/n==============================");
+            System.out.println("\n==============================");
             System.out.println("Nilai tidak valid!");
-            System.out.println("/n==============================");
+            System.out.println("\n==============================");
             
         } else {
             
@@ -53,10 +53,10 @@ public class PraktikumPemilihanRevalinda {
                 statusKelulusan = "TIDAK LULUS";
             }
             
-            System.out.println("/n==============================");
+            System.out.println("\n==============================");
             System.out.printf("Nilai akhir : %.1f\n", nilaiAkhir);
             System.out.printf("Nilai Huruf : %s\n", nilaiHuruf);
-            System.out.println("/n==============================");
+            System.out.println("\n==============================");
             System.out.printf("Anda Dinyatakan %s\n", statusKelulusan);
         }
         reva.close();
