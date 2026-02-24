@@ -19,6 +19,7 @@ public class MataKuliahDemo21 {
             dummy = sc.nextLine();
             sks = Integer.parseInt(dummy);
             System.out.print("Jumlah jam  : ");
+            dummy = sc.nextLine();
             jumlahJam = Integer.parseInt(dummy);
             System.out.println("---------------------------------");
 
