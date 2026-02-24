@@ -55,6 +55,6 @@ public class Mahasiswa21 {
         mhs.updateIPK(3.9);
 
         mhs.tampilkanInformasi();
-        System.out.println(mhs.nilaiKinerja());
-    }
+        System.out.println(mhs.nilaiKinerja()); 
+    } 
 }
