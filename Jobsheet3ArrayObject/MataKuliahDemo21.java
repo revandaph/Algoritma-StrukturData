@@ -12,10 +12,10 @@ public class MataKuliahDemo21 {
             arrayOfMatakuliah[i].tambahData();
             System.out.println("-------------------------------------");
         }
-
+        
         for (int i = 0; i < arrayOfMatakuliah.length; i++) {
             System.out.println("Data Matakuliah ke-" + (i + 1));
+            arrayOfMatakuliah[i].cetakInfo();
         }
-
     }
 }
