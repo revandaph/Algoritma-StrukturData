@@ -8,9 +8,6 @@ public class DataDosen21 {
     public boolean jenisKelamin;
     public int usia;
 
-    public DataDosen21() {
-    }
-
     public void tambahData() {
         Scanner sc = new Scanner(System.in);
 
@@ -38,4 +35,3 @@ public class DataDosen21 {
         System.out.println("-----------------------------");
     }
 }
-
