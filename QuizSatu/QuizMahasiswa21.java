@@ -1,5 +1,4 @@
-import QuizSatu.QuizMataKuliah21;
-
+package QuizSatu;
 public class QuizMahasiswa21 {
     String nim;
     String nama;

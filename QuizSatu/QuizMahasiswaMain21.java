@@ -1,5 +1,4 @@
-import QuizSatu.QuizMataKuliah21;
-
+package QuizSatu;
 public class QuizMahasiswaMain21 {
     public static void main(String[] args) {
 
