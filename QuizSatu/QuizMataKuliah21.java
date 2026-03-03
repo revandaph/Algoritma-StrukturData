@@ -3,7 +3,7 @@ package QuizSatu;
 public class QuizMataKuliah21 {
     String kodeMK;
     String namaMK;
-    int sks;
+    public int sks;
 
     public QuizMataKuliah21(String kodeMK, String namaMK, int sks) {
         this.kodeMK = kodeMK;
