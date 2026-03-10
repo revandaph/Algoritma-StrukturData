@@ -1,15 +1,15 @@
 package Jobsheet2Object;
 
-public class Mahasiswa21 {
+public class LatihanMahasiswa21 {
 
     String nama, nim, kelas;
     Double ipk;
 
-    public Mahasiswa21() {
+    public LatihanMahasiswa21() {
 
     }
 
-    public Mahasiswa21(String nm, String nim, double ipk, String kls) {
+    public LatihanMahasiswa21(String nm, String nim, double ipk, String kls) {
         nama = nm;
         this.nim = nim;
         this.ipk=ipk;
@@ -48,7 +48,7 @@ public class Mahasiswa21 {
     }
 
     public static void main(String[] args) {
-        Mahasiswa21 mhs = new Mahasiswa21();
+        LatihanMahasiswa21 mhs = new LatihanMahasiswa21();
         mhs.nama = "Revalinda";
         mhs.nim = "254107060053";
         mhs.kelas = "SIB-1E";

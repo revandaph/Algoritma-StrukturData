@@ -2,7 +2,7 @@ package Jobsheet2Object;
 
 public class MahasiswaMain21 {
     public static void main(String[] args) {
-        Mahasiswa21 mhs1 = new Mahasiswa21();
+        LatihanMahasiswa21 mhs1 = new LatihanMahasiswa21();
         mhs1.nama = "Muhammad Ali Farhan";
         mhs1.nim = "2241720171";
         mhs1.kelas = "SI 2J";
@@ -13,11 +13,11 @@ public class MahasiswaMain21 {
         mhs1.updateIPK(3.60);
         mhs1.tampilkanInformasi();
     
-        Mahasiswa21 mhs2 = new Mahasiswa21("Annisa Nabila", "2141720106", 3.25, "TI 2L");
+        LatihanMahasiswa21 mhs2 = new LatihanMahasiswa21("Annisa Nabila", "2141720106", 3.25, "TI 2L");
         mhs2.updateIPK(3.30);
         mhs2.tampilkanInformasi();
 
-        Mahasiswa21 mhsRevalinda = new Mahasiswa21("Revalinda Putri", "254107060053", 3.63, "SIB-1E");
+        LatihanMahasiswa21 mhsRevalinda = new LatihanMahasiswa21("Revalinda Putri", "254107060053", 3.63, "SIB-1E");
         mhsRevalinda.tampilkanInformasi();
         System.out.println(mhsRevalinda.nilaiKinerja());
     }
