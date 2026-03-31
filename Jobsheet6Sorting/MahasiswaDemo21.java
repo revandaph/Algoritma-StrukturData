@@ -32,7 +32,11 @@ public class MahasiswaDemo21 {
 
         list.bubbleSort();
 
-        System.out.println("\nData setelah sorting (DESC):");
+        System.out.println("\nData setelah sorting berdasarkan IPK (DESC): ");
+        list.tampil();
+
+        System.out.println("\nData yang sudah terurut menggunakan SELECTION SORT (ASC): ");
+        list.selectionSort();
         list.tampil();
     }
 }
