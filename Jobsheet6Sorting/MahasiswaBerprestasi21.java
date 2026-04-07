@@ -45,18 +45,50 @@ public class MahasiswaBerprestasi21 {
             listMhs[i]=tmp;
         }
     }
-
+    
     void insertionSort() {
         for (int i = 1; i < listMhs.length; i++) {
             Mahasiswa21 temp = listMhs[i];
             int j = i;
-
+            
             while (j > 0 && listMhs[j - 1].ipk < temp.ipk) {
                 listMhs[j] = listMhs[j - 1];
                 j--;
             }
-
+            
             listMhs[j] = temp;
         }
     } 
+
+    // Jobsheet 7 Searching
+    int sequentialSearching(double cari){
+        int posisi = -1;
+        for (int j = 0; j < listMhs.length; j++) {
+            if (listMhs[j].ipk==cari) {
+                posisi=j;
+                break;
+            }
+        }
+        return posisi;
+    }
+
+    // Jobsheet 7 Searching
+    void tampilPosisi(double x, int pos){
+        if (pos!=-1) {
+            System.out.println("data mahasiswa dengan IPK : " + x + " ditemukan pada indeks " + pos);
+        } else {
+            System.out.println("data " + x + " tidak ditemukan");
+        }
+    }
+
+    void tampilDataSearch(double x, int pos) {
+        if (pos != -1) {
+            System.out.println("nim\t : " + listMhs[pos].nim);
+            System.out.println("nama\t : " + listMhs[pos].nama);
+            System.out.println("kelas\t : " + listMhs[pos].kelas);
+            System.out.println("ipk\t : " + x);
+        } else {
+            System.out.println("Data mahasiswa dengan IPK " + x + " tidak ditemukan");
+        }
+    }
 }
