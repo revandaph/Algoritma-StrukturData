@@ -1,8 +1,12 @@
 package Jobsheet6Sorting;
 
 public class MahasiswaBerprestasi21 {
-    Mahasiswa21 [] listMhs = new Mahasiswa21[5];
+    Mahasiswa21[] listMhs;  
     int idx;
+
+    MahasiswaBerprestasi21(int jumlah) {
+        listMhs = new Mahasiswa21[jumlah]; 
+    }
 
     void tambah (Mahasiswa21 m) {
         if (idx<listMhs.length) {
