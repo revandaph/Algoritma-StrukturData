@@ -122,6 +122,7 @@ public class PeminjamanMain21 {
             System.out.println("6. Tampilkan Peminjaman");
             System.out.println("7. Urutkan Peminjam Berdasarkan Denda");
             System.out.println("8. Cari Peminjam Berdasarkan NIM");
+            System.out.println("9. Jumlah Transaksi Peminjaman");
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
             pilihan = Integer.parseInt(sc.nextLine());
@@ -255,6 +256,9 @@ public class PeminjamanMain21 {
                     binarySearch(dataPinjam, jumlahPinjam, nimCari);
                 }
 
+            } else if (pilihan == 9) {
+                System.out.println("Total transaksi peminjaman: " + jumlahPinjam);
+            
             } else if (pilihan == 0) {
                 System.out.println("Program selesai. Terima kasih!");
 
