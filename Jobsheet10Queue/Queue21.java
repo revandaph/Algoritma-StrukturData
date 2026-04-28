@@ -66,38 +66,37 @@ public class Queue21 {
 
     public void Enqueue(int dt) {
         if (IsFull()) {
-            System.out.println("Queue sudah penuh");
+            System.out.println("Queue OVERFLOW! Program dihentikan.");
+            System.exit(1);
+        }
+        if (IsEmpty()) {
+            front = 0;
+            rear = 0;
         } else {
-            if (IsEmpty()) {
-                front = 0;
+            if (rear == max - 1) {
                 rear = 0;
             } else {
-                if (rear == max - 1) {
-                    rear = 0;
-                } else {
-                    rear++;
-                }
+                rear++;
             }
-            data[rear] = dt;
-            size++;
         }
+        data[rear] = dt;
+        size++;
     }
 
     public int Dequeue() {
-        int dt = 0;
         if (IsEmpty()) {
-            System.out.println("Queue masih kosong");
+            System.out.println("Queue UNDERFLOW! Program dihentikan.");
+            System.exit(1);
+        }
+        int dt = data[front];
+        size--;
+        if (IsEmpty()) {
+            front = rear = -1;
         } else {
-            dt = data[front];
-            size--;
-            if (IsEmpty()) {
-                front = rear = -1;
+            if (front == max - 1) {
+                front = 0;
             } else {
-                if (front == max - 1) {
-                    front = 0;
-                } else {
-                    front++;
-                }
+                front++;
             }
         }
         return dt;
