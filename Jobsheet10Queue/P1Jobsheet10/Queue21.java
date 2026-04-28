@@ -1,4 +1,4 @@
-package Jobsheet10Queue;
+package Jobsheet10Queue.P1Jobsheet10;
 
 import java.util.Scanner;
 
