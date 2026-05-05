@@ -45,6 +45,40 @@ public class SLLMain21 {
         System.out.println("\nSetelah penambahan dari keyboard:");
         sll.print();
 
+        System.out.print("data index 1 : ");
+        System.out.println();
+        sll.getData(1);
+        System.out.println();
+
+        System.out.println("data mahasiswa an Bimon berada pada index : " + sll.indexOf("bimon"));
+        System.out.println();
+
+        sll.removeFirst();
+        sll.removeLast();
+        sll.print();
+
+        sll.removeAt(0);
+        sll.print();
+
+        System.out.println("=== Tambah Mahasiswa dari Keyboard ===");
+        System.out.print("Masukkan NIM   : ");
+        nim = sc.nextLine();
+
+        System.out.print("Masukkan Nama  : ");
+        nama = sc.nextLine();
+
+        System.out.print("Masukkan Kelas : ");
+        kelas = sc.nextLine();
+
+        System.out.print("Masukkan IPK   : ");
+        ipk = Double.parseDouble(sc.nextLine());
+
+        mhsBaru = new Mahasiswa21(nim, nama, kelas, ipk);
+        sll.addLast(mhsBaru);
+
+        System.out.println("\nSetelah penambahan dari keyboard:");
+        sll.print();
+
         sc.close();
     }
 }
