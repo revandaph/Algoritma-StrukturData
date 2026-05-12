@@ -100,4 +100,17 @@ public class DoubleLinkedList21 {
             tail.next = null;
         }
     }
+
+    public void printReverse() {
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
+
+        Node21 current = tail;
+        while (current != null) {
+            current.data.tampil();
+            current = current.prev;
+        }
+    }
 }
