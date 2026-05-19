@@ -63,7 +63,47 @@ public class PesananDLL21 {
         } while (swapped);
     }
 
+    // [MODIFIKASI] Metode baru: cari pesanan dengan harga tertinggi
+    // Traversal seluruh list, simpan node dengan harga terbesar yang ditemukan
+    // Dikembalikan sebagai objek Pesanan21 agar bisa diakses nama & harga-nya
+    Pesanan21 cariHargaTertinggi() {
+        if (head == null) return null;
+
+        Pesanan21 maks    = head; // Asumsikan head sebagai maks awal
+        Pesanan21 current = head.next;
+
+        while (current != null) {
+            // Jika harga node saat ini lebih besar, perbarui referensi maks
+            if (current.harga > maks.harga) {
+                maks = current;
+            }
+            current = current.next;
+        }
+        return maks;
+    }
+
+    // [MODIFIKASI] Metode baru: cari pesanan dengan harga terendah
+    // Traversal seluruh list, simpan node dengan harga terkecil yang ditemukan
+    // Dikembalikan sebagai objek Pesanan21 agar bisa diakses nama & harga-nya
+    Pesanan21 cariHargaTerendah() {
+        if (head == null) return null;
+
+        Pesanan21 min     = head; // Asumsikan head sebagai min awal
+        Pesanan21 current = head.next;
+
+        while (current != null) {
+            // Jika harga node saat ini lebih kecil, perbarui referensi min
+            if (current.harga < min.harga) {
+                min = current;
+            }
+            current = current.next;
+        }
+        return min;
+    }
+
     // Urutkan pesanan, lalu traversal dari head ke tail untuk cetak laporan dan total harga
+    // [MODIFIKASI] Ditambahkan pemanggilan cariHargaTertinggi() dan cariHargaTerendah()
+    // untuk menampilkan ringkasan harga di akhir laporan
     void cetakLaporan() {
         if (head == null) {
             System.out.println("Belum ada pesanan masuk.");
@@ -75,18 +115,37 @@ public class PesananDLL21 {
         System.out.println("=============================================");
         System.out.println("         LAPORAN PESANAN (URUT NAMA PESANAN)");
         System.out.println("=============================================");
-        System.out.printf("%-15s %-20s %-10s%n", "Kode Pesanan", "Nama Pesanan", "Harga");
+        System.out.printf("%-15s %-20s %-15s %-15s%n",
+                "Kode Pesanan", "Nama Pesanan", "Harga", "Nama Pembeli");
 
         int       total   = 0;
         Pesanan21 current = head;
         while (current != null) {
-            System.out.printf("%-15d %-20s %-10d%n",
-                    current.kodePesanan, current.namaPesanan, current.harga);
+            // [MODIFIKASI] Tambah kolom Nama Pembeli di setiap baris laporan
+            System.out.printf("%-15d %-20s %-15d %-15s%n",
+                    current.kodePesanan, current.namaPesanan,
+                    current.harga,       current.namaPembeli);
             total  += current.harga;
             current = current.next;
         }
+
         System.out.println("=============================================");
         System.out.println("Total Pendapatan : " + total);
+
+        // [MODIFIKASI] Blok baru: tampilkan pesanan harga tertinggi & terendah
+        // Memanggil kedua metode pencarian di atas lalu mencetak hasilnya
+        Pesanan21 tertinggi = cariHargaTertinggi();
+        Pesanan21 terendah  = cariHargaTerendah();
+
+        System.out.println("---------------------------------------------");
+        System.out.println("Pesanan Harga Tertinggi :");
+        System.out.printf("  %-20s | Harga : %d | Pembeli : %s%n",
+                tertinggi.namaPesanan, tertinggi.harga, tertinggi.namaPembeli);
+
+        System.out.println("Pesanan Harga Terendah  :");
+        System.out.printf("  %-20s | Harga : %d | Pembeli : %s%n",
+                terendah.namaPesanan, terendah.harga, terendah.namaPembeli);
+        System.out.println("=============================================");
     }
 
     boolean isEmpty() {
