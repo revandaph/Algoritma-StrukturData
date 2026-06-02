@@ -9,6 +9,14 @@ public class Queue21 {
     int size;
     int max;
 
+    // =====================================================
+    // MODIFIKASI SOAL 5 - tambah field Stack:
+    // sData  : array untuk menyimpan data Stack (arsip)
+    // top    : penunjuk posisi paling atas Stack
+    // =====================================================
+    int[] sData; // MODIF: tambah field array Stack
+    int top;     // MODIF: tambah field top Stack
+
     public Queue21(int n) {
         max = n;
         data = new int[max];
@@ -102,6 +110,19 @@ public class Queue21 {
         return dt;
     }
 
+    public void initStack(int n) {
+        sData = new int[n];
+        top = -1;
+    }
+
+    public void push(int dt) {
+        sData[++top] = dt;
+    }
+
+    public int peekStack() {
+        return sData[top];
+    }
+
     public static void menu() {
         System.out.println("Masukkan operasi yang diinginkan: ");
         System.out.println("1. Enqueue");
@@ -114,37 +135,22 @@ public class Queue21 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan kapasitas queue: ");
-        int n = sc.nextInt();
-        Queue21 Q = new Queue21(n);
 
-        int pilih;
-        do {
-            menu();
-            pilih = sc.nextInt();
-            switch (pilih) {
-                case 1:
-                    System.out.print("Masukkan data baru: ");
-                    int dataMasuk = sc.nextInt();
-                    Q.Enqueue(dataMasuk);
-                    break;
-                case 2:
-                    int dataKeluar = Q.Dequeue();
-                    if (dataKeluar != 0) {
-                        System.out.println("Data yang dikeluarkan: " + dataKeluar);
-                    }
-                    break;
-                case 3:
-                    Q.print();
-                    break;
-                case 4:
-                    Q.peek();
-                    break;
-                case 5:
-                    Q.clear();
-                    break;
-            }
-        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5);
+        Queue21 Q = new Queue21(10);
+        Q.initStack(10);
+
+        System.out.print("Masukkan ID buku 1: ");
+        Q.Enqueue(sc.nextInt());
+        System.out.print("Masukkan ID buku 2: ");
+        Q.Enqueue(sc.nextInt());
+        System.out.print("Masukkan ID buku 3: ");
+        Q.Enqueue(sc.nextInt());
+
+        while (!Q.IsEmpty()) {
+            Q.push(Q.Dequeue());
+        }
+
+        System.out.println("ID buku paling atas (top) pada arsip Stack: " + Q.peekStack());
 
         sc.close();
     }
