@@ -6,7 +6,7 @@ public class DemoArrayList21 {
 
     public static void main(String[] args) {
 
-        ArrayList<Customer21> customers = new ArrayList<>(2);
+        ArrayList<Customer21> customers = new ArrayList<>();
 
         Customer21 customer1 = new Customer21(1, "Zakia");
         Customer21 customer2 = new Customer21(5, "Budi");
@@ -27,5 +27,18 @@ public class DemoArrayList21 {
         for (Customer21 cust : customers) {
             System.out.println(cust.toString());
         }
+
+        ArrayList<Customer21> newCustomers = new ArrayList<>();
+        newCustomers.add(new Customer21(201, "Della"));
+        newCustomers.add(new Customer21(202, "Victor"));
+        newCustomers.add(new Customer21(203, "Sarah"));
+
+        customers.addAll(newCustomers);
+
+        for (Customer21 cust : customers) {
+            System.out.println(cust.toString());
+        }
+
+        System.out.println(customers);
     }
 }
