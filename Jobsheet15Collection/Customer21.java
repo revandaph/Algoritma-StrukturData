@@ -1,4 +1,4 @@
-package Jobsheet15Collection.java;
+package Jobsheet15Collection;
 
 public class Customer21 {
     public int id;
